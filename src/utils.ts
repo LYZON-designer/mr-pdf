@@ -99,6 +99,7 @@ export async function generatePDF({
       }
 
       // Find next page url before DOM operations
+      const paginationSelector = '.pagination-nav__link--next';
       nextPageURL = await page.evaluate((paginationSelector) => {
         const element = document.querySelector(paginationSelector);
         if (element) {
@@ -130,7 +131,7 @@ export async function generatePDF({
       justify-content: center;
       align-items: center;
       height: 100vh;
-      page-break-after: always;  
+      page-break-after: always;
       text-align: center;
     "
   >
